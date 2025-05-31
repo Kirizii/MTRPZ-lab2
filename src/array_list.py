@@ -33,3 +33,21 @@ class ArrayList:
 
     def reverse(self):
         self.data.reverse()
+
+    def findFirst(self, element):
+        try:
+            return self.data.index(element)
+        except ValueError:
+            return -1
+
+    def findLast(self, element):
+        try:
+            return len(self.data) - 1 - self.data[::-1].index(element)
+        except ValueError:
+            return -1
+
+    def clear(self):
+        self.data.clear()
+
+    def extend(self, elements):
+        self.data.extend(elements.data)
