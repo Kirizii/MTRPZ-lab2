@@ -113,3 +113,39 @@ class CircularLinkedList:
                 break
         start.next = prev
         self.head = prev
+
+    def findFirst(self, element):
+        current = self.head
+        index = 0
+        if not current:
+            return -1
+        while True:
+            if current.data == element:
+                return index
+            current = current.next
+            index += 1
+            if current == self.head:
+                break
+        return -1
+
+    def findLast(self, element):
+        current = self.head
+        index = 0
+        last_index = -1
+        if not current:
+            return -1
+        while True:
+            if current.data == element:
+                last_index = index
+            current = current.next
+            index += 1
+            if current == self.head:
+                break
+        return last_index
+
+    def clear(self):
+        self.head = None
+
+    def extend(self, elements):
+        for i in range(elements.length()):
+            self.append(elements.get(i))
