@@ -71,3 +71,45 @@ class CircularLinkedList:
         data = current.next.data
         current.next = current.next.next
         return data
+
+    def deleteAll(self, element):
+        count = self.length()
+        for i in range(count - 1, -1, -1):
+            if self.get(i) == element:
+                self.delete(i)
+
+    def get(self, index):
+        if index < 0 or index >= self.length():
+            raise IndexError("Index out of bounds")
+        current = self.head
+        for _ in range(index):
+            current = current.next
+        return current.data
+
+    def clone(self):
+        cloned = CircularLinkedList()
+        current = self.head
+        if not current:
+            return cloned
+        cloned.append(current.data)
+        current = current.next
+        while current != self.head:
+            cloned.append(current.data)
+            current = current.next
+        return cloned
+
+    def reverse(self):
+        prev = None
+        current = self.head
+        start = self.head
+        if not current:
+            return
+        while True:
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+            if current == start:
+                break
+        start.next = prev
+        self.head = prev
