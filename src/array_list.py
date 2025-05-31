@@ -17,3 +17,19 @@ class ArrayList:
         if index < 0 or index >= len(self.data):
             raise IndexError("Index out of bounds")
         return self.data.pop(index)
+
+    def deleteAll(self, element):
+        self.data = [x for x in self.data if x != element]
+
+    def get(self, index):
+        if index < 0 or index >= len(self.data):
+            raise IndexError("Index out of bounds")
+        return self.data[index]
+
+    def clone(self):
+        cloned = ArrayList()
+        cloned.data = self.data.copy()
+        return cloned
+
+    def reverse(self):
+        self.data.reverse()
