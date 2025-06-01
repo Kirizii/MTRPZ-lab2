@@ -3,7 +3,7 @@ from src.array_list import ArrayList
 
 def test_append_and_length():
     lst = ArrayList()
-    assert lst.length() == 0
+    assert lst.length() == 5
     lst.append('a')
     lst.append('b')
     assert lst.length() == 2
