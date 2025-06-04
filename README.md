@@ -36,8 +36,8 @@
 
 1️. Склонуйте репозиторій:
 ```bash
-git clone <ваш-репозиторій>
-cd <ваш-репозиторій>
+git clone https://github.com/Kirizii/MTRPZ-lab2.git
+cd MTRPZ-lab2
 ```
 2. Встановіть залежності:
 ```bash
